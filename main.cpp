@@ -22,7 +22,7 @@ public:
 
 	int getRank() {return _myrank;}
 
-	int handShake(int source, int dest, int *buf, int nbuf, int tag) {
+	int deliver(int source, int dest, int *buf, int nbuf, int tag) {
 
 		int ierr;
 
@@ -85,7 +85,7 @@ int main(int argc, char **argv) {
 
 	int ierr = 0;
 
-	ierr = comm.handShake(0,1,a,nbuf,0);
+	ierr = comm.deliver(0,1,a,nbuf,0);
 
 	if (comm.getRank() == 1) {
 		cout << '[' << comm.getRank() << "] ";
